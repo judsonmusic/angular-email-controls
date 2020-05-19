@@ -3,7 +3,10 @@
 <form [formGroup]="formGroup">
 <div formArrayName="emails" *ngFor="let item of emails.controls; let i = index;">
   <ng-container [formGroupName]="i">
-    <input type="hidden" formControlName="id" />    
+    <input type="hidden" formControlName="id" />
+     <select  formControlName="type">
+    <option *ngFor="let type of emailTypes">{{type.value}}</option>
+  </select>
     <div size="7" class="ion-no-padding">
       <input class="input-email ion-no-margin" placeholder="myname@mycompany.com" formControlName="email"/>
     </div>    
@@ -16,3 +19,4 @@
   </div>
 </div>
 </form>
+{{types | json}}

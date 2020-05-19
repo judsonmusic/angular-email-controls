@@ -9,6 +9,10 @@ import { FormGroup, FormBuilder, FormControl, Validators, FormArray } from '@ang
 export class AppComponent  {
   name = 'Angular';
   editForm: FormGroup;
+  emailTypesList = [
+    {value: 'mobile'},
+    {value: 'work'}
+  ]
 
   constructor(private formBuilder: FormBuilder){
     this.editForm = this.formBuilder.group({

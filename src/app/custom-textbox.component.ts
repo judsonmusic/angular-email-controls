@@ -19,6 +19,8 @@ export class CustomEmails{
   public formGroup: FormGroup;
   @Input()
   public formArrayName: string;
+  @Input()
+  public emailTypes: any;
 
   get emails(){
     return this.formGroup.get(this.formArrayName) as FormArray;
@@ -35,6 +37,7 @@ export class CustomEmails{
   private createEmailGroup(email?: any) {
     const emailGroup = this.formBuilder.group({
       id: new FormControl(this.emails.length + 1),
+      type: new FormControl(null),
       email: new FormControl(null, Validators.required)
     });
     return emailGroup;
