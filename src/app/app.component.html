@@ -1,0 +1,11 @@
+<h1>Validation in Custom Form Components</h1>
+
+<p>
+	The goal of this sample is to demonstrate how to achieve displaying validation error messages inside a custom component.
+</p>
+
+<form style="margin-top: 2rem" [formGroup]="editForm" (submit)="save()">
+	<app-custom-emails [form]="editForm"></app-custom-emails>
+  <p>Parent form is valid: {{editForm.valid}}
+    <button type="submit">Submit</button>
+</form>
