@@ -22,6 +22,6 @@ export class AppComponent  {
   }
 
   save(){
-    console.log(this.editForm);
+    console.log(this.editForm.value);
   }
 }

@@ -29,16 +29,10 @@ export class CustomEmails{
    
   }
 
-  public handleChange(): void {
-    // console.log(this.emailForm.get("emails").value);
-  }
-
-  public addEmail() {
-    console.log(this.form);
+  public addEmail() {    
     const emailsArray = this.form.get("emails") as FormArray;
     const emailGroup = this.createEmailGroup();
     this.emails.push(emailGroup);
-    this.handleChange();
   }
 
   private createEmailGroup(email?: any) {
