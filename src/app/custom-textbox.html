@@ -1,6 +1,6 @@
 
-<div [formGroup]="form">
-  <ng-container *ngIf="emails.controls">
+ 
+<form [formGroup]="formGroup">
 <div formArrayName="emails" *ngFor="let item of emails.controls; let i = index;">
   <ng-container [formGroupName]="i">
     <input type="hidden" formControlName="id" />    
@@ -9,10 +9,10 @@
     </div>    
   </ng-container>
 </div>
-  </ng-container>
+
 <div>
   <div class="ion-no-padding ion-padding-top">
     <button class="add-button btn-clear" (click)="addEmail()">Add Email</button>
   </div>
 </div>
-</div>
+</form>

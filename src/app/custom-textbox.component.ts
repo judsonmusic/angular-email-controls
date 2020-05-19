@@ -15,24 +15,21 @@ import {
   styleUrls: ["./_custom-textbox.scss"]
 })
 export class CustomEmails{
-
   @Input()
-  public form: any;
+  public formGroup: FormGroup;
+  @Input()
+  public formArrayName: string;
 
-  public get emails() {
-    return this.form.get('emails') as FormArray;
+  get emails(){
+    return this.formGroup.get(this.formArrayName) as FormArray;
   }
 
-  public emailForm: FormGroup;
-
-  constructor(private formBuilder: FormBuilder) {
-   
-  }
+  constructor(private formBuilder: FormBuilder) {}
 
   public addEmail() {    
-    const emailsArray = this.form.get("emails") as FormArray;
     const emailGroup = this.createEmailGroup();
     this.emails.push(emailGroup);
+    console.log(this.emails)
   }
 
   private createEmailGroup(email?: any) {

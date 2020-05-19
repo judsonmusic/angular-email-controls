@@ -12,13 +12,9 @@ export class AppComponent  {
 
   constructor(private formBuilder: FormBuilder){
     this.editForm = this.formBuilder.group({
+      name: new FormControl(null),
       emails: new FormArray([])
     })
-
-    this.editForm.valueChanges.subscribe(res=>{
-      console.log("Change detected on form.");
-    })
-
   }
 
   save(){

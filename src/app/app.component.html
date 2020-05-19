@@ -5,7 +5,8 @@
 </p>
 
 <form style="margin-top: 2rem" [formGroup]="editForm" (submit)="save()">
-	<app-custom-emails [form]="editForm"></app-custom-emails>
+  <input type="text" formControlName="name"/>
+	<app-custom-emails [formGroup]="editForm" formArrayName="emails"></app-custom-emails>
   <p>Parent form is valid: {{editForm.valid}}
     <button type="submit">Submit</button>
 </form>
